@@ -1,8 +1,13 @@
 <?php
 session_start();
+try{
+	$connection=mysqli_connect('localhost','root', 'root', 'user_accounts');
+}
+catch(Exception $e) {
+  echo 'Message: ' .$e->getMessage();
+}
 
-$connection=mysqli_connect('localhost','root', 'root');
-mysqli_select_db($connection, 'user_accounts');
+//mysqli_select_db($connection, 'user_accounts');
 $name = $_POST['user'];
 $pwd  = $_POST['password'];
 $sql_query=" select * from user where username='$name' && password='$pwd' ";
@@ -16,7 +21,7 @@ if ($num==1){
 else
 {
 	$_SESSION['error']= "Login failed ... Username and/or Password not correct!";
-	header('location:login.php');
+	//header('location:login.php');
 }
 
 ?>
