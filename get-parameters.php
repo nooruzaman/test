@@ -23,10 +23,10 @@
     $un = $values['/example/username'];
     $pw = $values['/example/password'];
     $db = $values['/example/database'];
-    $ep = 'research-organization-database.c7ab3it6gt4u.us-east-1.rds.amazonaws.com';
+    $ep = 'localhost';
     $db = 'country_schema';
-    $un = 'admin';
-    $pw = 'PasswordForDB1234';
+    $un = 'root';
+    $pw = 'root';
 	
   }
   catch (Exception $e) {
